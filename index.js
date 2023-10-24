@@ -39,9 +39,9 @@ const questions = [
     message: 'Which license is your project using:',
     name: 'license',
     choices: [
-      {name: 'MIT', value: 'https://choosealicense.com/licenses/mit/'},
-      {name: 'GNU GPLv3', value: 'https://choosealicense.com/licenses/gpl-3.0/'},
-      {name: 'Apache', value: 'https://choosealicense.com/licenses/apache-2.0/'}
+      {name: 'MIT', value: ['MIT','https://choosealicense.com/licenses/mit/']},
+      {name: 'GNU GPLv3', value: ['GNUGPLv3','https://choosealicense.com/licenses/gpl-3.0/']},
+      {name: 'Apache', value: ['Apache','https://choosealicense.com/licenses/apache-2.0/']}
     ]
   },
   {
@@ -52,7 +52,7 @@ const questions = [
   {
     type: 'input',
     message: `What email do you want to provide for others?`,
-    name: 'description'
+    name: 'email'
   }
 ];
 
@@ -62,13 +62,13 @@ function init() {
     .then(responses => {
       const text = 
 `
-# ${title}
-![Static Badge](https://img.shields.io/badge/License-${license.name}-blue)
+# ${responses.title}
+![Static Badge](https://img.shields.io/badge/License-${responses.license[0]}-blue)
 
 
 ## Description
 
-${description}
+${responses.description}
 
 ## Table of Contents
 
@@ -81,33 +81,33 @@ ${description}
 
 ## Installation
 
-${installInstructions}
+${responses.installInstructions}
 
 ## Usage Information
 
-${usageInfo}
+${responses.usageInfo}
 
 ## Contribution Guidelines
 
-${contribution}
+${responses.contribution}
 
 ## Test Instructions
 
-${testInstructions}
+${responses.testInstructions}
 
 ## License
 
-The license used for this project is [${license.name}](${license.value}).
+The license used for this project is [${responses.license[0]}](${responses.license[1]}).
 
 ---
 
 ## Questions
 
-Contact me on [Github](https://github.com/${githubName})
+Contact me on [Github](https://github.com/${responses.githubName})
 
-Contact me via email at ${email}`;
+Contact me via email at ${responses.email}`;
 
-      fs.writeFile('README.md', text, (error) => {
+      fs.writeFile('newREADME.md', text, (error) => {
         if(error){
           console.log('Something failed here');
         }
