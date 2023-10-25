@@ -39,9 +39,9 @@ const questions = [
     message: 'Which license is your project using:',
     name: 'license',
     choices: [
-      {name: 'MIT', value: ['MIT','https://choosealicense.com/licenses/mit/']},
-      {name: 'GNU GPLv3', value: ['GNUGPLv3','https://choosealicense.com/licenses/gpl-3.0/']},
-      {name: 'Apache', value: ['Apache','https://choosealicense.com/licenses/apache-2.0/']}
+      {name: 'MIT', value: ['MIT','https://opensource.org/licenses/MIT', 'MIT-yellow']},
+      {name: 'GNU GPLv3', value: ['GPLv3','https://www.gnu.org/licenses/gpl-3.0', 'GPLv3-blue']},
+      {name: 'Apache', value: ['Apache','https://opensource.org/licenses/Apache-2.0', 'Apache_2.0-yellow']}
     ]
   },
   {
@@ -63,7 +63,7 @@ function init() {
       const text = 
 `
 # ${responses.title}
-![Static Badge](https://img.shields.io/badge/License-${responses.license[0]}-blue)
+[![License](https://img.shields.io/badge/License-${responses.license[2]}.svg)]()
 
 
 ## Description
