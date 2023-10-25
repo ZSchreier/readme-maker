@@ -7,4 +7,6 @@ The goal of this project was to create a README.md file from the user's inputs i
 ## Preview
 
 The video linked here provides an example walkthrough of the code in action:
-[README.md maker sample video](https://drive.google.com/file/d/1_CqQqaCCkzQZl0TibSryw1xXJsV04wMc/view)
+[README.md maker sample video](https://drive.google.com/file/d/1wyVTuKKqCys0eFqlXXG2eKagKUrCC4O_/view)
+
+Provided here is a top-half screenshot of an example README.md file created with this code: ![An image of an example created with the code](./assets/sample-readme.PNG)
