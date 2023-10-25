@@ -63,7 +63,7 @@ function init() {
       const text = 
 `
 # ${responses.title}
-[![License](https://img.shields.io/badge/License-${responses.license[2]}.svg)]()
+[![License](https://img.shields.io/badge/License-${responses.license[2]}.svg)](${responses.license[1]})
 
 
 ## Description
