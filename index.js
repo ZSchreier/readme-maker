@@ -1,8 +1,10 @@
 
+
+// require statements
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-
+// array of questions for inquirer to make use of
 const questions = [
   {
     type: 'input',
@@ -56,7 +58,7 @@ const questions = [
   }
 ];
 
-
+// function that starts when the file is loaded up; it prompts the user for input before generating a large template literal with the responses given
 function init() {
   inquirer.prompt(questions)
     .then(responses => {
